@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ITBusiness Mailchimp Data</title>
+    <meta name="author" content="name" />
+    <meta name="description" content="description here" />
+    <meta name="keywords" content="keywords,here" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+
+  
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+	<!--Container-->
+	<div class="container w-full md:max-w-3xl mx-auto pt-20">
+
+		<div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal" style="font-family:Georgia,serif;">
+
+			<!--Title-->
+			<div class="font-sans">
+						<h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">IT-Business Mailchimp Campaign results</h1>
+						<p class="text-sm md:text-base font-normal text-gray-600">06/06/2021 - Dylan Cathelijn</p>
+      <p class="py-4 italic">For a project in the IT Business course we had to make a mailing list and send it to our colleagues to get their opinion. I wanted to do something unique for my portfolio, but with being unique also sometimes comes the issue of it being too difficult to use, or too vague to understand. I wanted to see from the survey if people understood how to use the site, and learn if I could do anything better.</p>
+			</div>
+
+   <div class="font-sans">
+    <p class="py-4">Using Mailchimp, I made an e-mailcampaign showcasing the portfolio I made and asked my colleagues to fill in a survey to gather their opinion about it. Mailchimp made it incredibly easy to do this, supplying me with a template I could use and a very easy survey tool to use.</p>
+    <h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-2xl">Q1: “What do you think of the design?”</h2>
+    <p class="py-4">The first question I asked what people thought of the design. I'm trying to emulate a terminal, something that most developers have seen once, if not every single day. A terminal, however doesn't really look "good". It's designed and made to be used as efficiently as possible. I tried making it look as nice as possible, but I still wanted to keep the essence of a terminal - I therefore had to make a compromise between looks and usuablity.</p>
+    <canvas id="designChart"></canvas>
+    <p class="py-4">The results from this question don't surprise me - I didn't expect people to *love* the design, but I'm still happy that I didn't get a result under 5. I'll try to make it look a bit better, but I still want to keep the look and feel of a traditional terminal.</p>
+    <h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-2xl">Q2: “What do you think of the concept?”</h2>
+    <p class="py-4">My second question was about the concept. Instead of the usual portfolio websites that are static sites that people are used to at this point, I wanted to do something somewhat unique and emulate a terminal. I was hoping to score "big" on this one since it's the question that mattered the most to me: do other people share the same feeling as me when it comes to the uniqueness of the portfolio?</p>
+    <canvas id="conceptChart"></canvas>
+    <p class="py-4">From the results, it seems that people do share the same feeling. There's one person that rated it below 5, but I'll consider that an outlier (and probably not a very good developer considering they don't like the terminal... 😉).</p>
+    <h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-2xl">Q3: “What do you think of the usability?”</h2>
+    <p class="py-4">The survey question I was most worried by: the usability of the portfolio. Like I said before, most if not all developers use a terminal daily, and since it's a portfolio aimed at web development companies, I figured (read: hoped) that they would be able to use it. I tried giving hints at the beginning to make it clear what they should type or do next in the hopes that there'd be no confusion as to what to do next.</p>
+    <canvas id="usabilityChart"></canvas>
+    <p class="py-4">Looking at the results, it seems that I might have to rethink some of the hints I give people as it seems that most people think the usability could be improved. This isn't a problem since I did have a few more ideas to improve the general flow of the terminal, but it's nice knowing that I should introduce these changes.</p>
+    <h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-2xl">Q4: “What do you think of the portfolio in general”</h2>
+    <p class="py-4">Wondering if the portfolio in general is good to see if the idea was as good as the result.</p>
+    <canvas id="generalPieChart"></canvas>
+    <p class="py-4">From the results I'm quite happy to see that the portfolio was well received, and it's reassuring to see that it being somewhat unique doesn't make it worse to be presented as a portfolio.</p>
+    <h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-2xl">Q5: “Would you recommend this portfolio to a friend or colleague”</h2>
+    <p class="py-4">This question was asked to see if people would send this to a friend or colleague that asked them, for example, if they knew any web developers that could make something for them.</p>
+    <canvas id="recommendPieChart"></canvas>
+    <p class="py-4">Here we see again that people seem to be quite happy with the portfolio, even though there are a few people that wouldn't recommend it, but since it's a small fraction of the total I'm happy to gloss over it.</p>
+    <h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-2xl">In conclusion</h2>
+    <p class="py-4">First I wasn't quite sure if I actually did a good thing making the portfolio this way since while it's a unique concept, there's a very real possibility that it hurts usability. However, from the results I've received I'm quite happy and it reassured me and the decision I made to make my portfolio this way. In the future I could always remake it to be a static site that is purely a showcase and has no interaction.</p>
+   </div>
+
+	</div>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script src="app.js"></script>
+	<script>
+		/* Progress bar */
+		//Source: https://alligator.io/js/progress-bar-javascript-css-variables/
+		var h = document.documentElement,
+			b = document.body,
+			st = 'scrollTop',
+			sh = 'scrollHeight',
+			progress = document.querySelector('#progress'),
+			scroll;
+		var scrollpos = window.scrollY;
+		var header = document.getElementById("header");
+		var navcontent = document.getElementById("nav-content");
+
+		document.addEventListener('scroll', function() {
+
+			/*Refresh scroll % width*/
+			scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+			progress.style.setProperty('--scroll', scroll + '%');
+
+			/*Apply classes for slide in bar*/
+			scrollpos = window.scrollY;
+
+			if (scrollpos > 10) {
+				header.classList.add("bg-white");
+				header.classList.add("shadow");
+				navcontent.classList.remove("bg-gray-100");
+				navcontent.classList.add("bg-white");
+			} else {
+				header.classList.remove("bg-white");
+				header.classList.remove("shadow");
+				navcontent.classList.remove("bg-white");
+				navcontent.classList.add("bg-gray-100");
+
+			}
+
+		});
+
+
+		//Javascript to toggle the menu
+		document.getElementById('nav-toggle').onclick = function() {
+			document.getElementById("nav-content").classList.toggle("hidden");
+		}
+	</script>
+
+</body>
+
+</html>
